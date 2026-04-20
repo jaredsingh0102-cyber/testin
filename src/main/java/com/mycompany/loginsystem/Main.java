@@ -23,24 +23,31 @@ public class Main {
 
         // Loop until registration is successful
         do {
-            // Show requirements
-            System.out.println("\nUsername must contain an underscore and be no more than five characters long.");
-            System.out.println("Password must be at least eight characters long and include a capital letter, a number, and a special character.");
-            System.out.println("Cell phone number must start with +27 and be followed by nine digits.\n");
 
-            // Get user details
-            System.out.print("Enter username : ");
+            // Username requirement
+            System.out.println("\nUsername requirement:");
+            System.out.println("- Must contain an underscore");
+            System.out.println("- Must be no more than five characters long");
+            System.out.print("Enter username: ");
             String username = input.nextLine();
 
-            System.out.print("Enter password : ");
+            // Password requirement
+            System.out.println("\nPassword requirement:");
+            System.out.println("- Must be at least eight characters long");
+            System.out.println("- Must include a capital letter, a number, and a special character");
+            System.out.print("Enter password: ");
             String password = input.nextLine();
 
-            System.out.print("Enter cell phone number (+27...) : ");
+            // Cell number requirement
+            System.out.println("\nCell phone number requirement:");
+            System.out.println("- Must start with +27");
+            System.out.println("- Must be followed by nine digits");
+            System.out.print("Enter cell phone number: ");
             String cell = input.nextLine();
 
             // Attempt registration
             result = user.registerUser(username, password, cell);
-            System.out.println(result);
+            System.out.println("\n" + result);
 
         } while (!result.contains("successfully"));
 
